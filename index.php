@@ -1,3 +1,83 @@
+<?php
+//set your email here:
+$yourEmail = 'your@email.fr';
+/*
+ * CONTACT FORM
+ */
+//If the form is submitted
+if(isset($_POST['submitted'])) { 
+    //Check to make sure that the name field is not empty
+    if($_POST['contact_name'] === '') { 
+            $hasError = true;
+    } else {
+            $name = $_POST['contact_name'];
+    }
+    //Check to make sure that the subject field is not empty
+    if($_POST['contact_subject'] === '') { 
+            $hasError = true;
+    } else {
+            $mail_subject = $_POST['contact_subject'];
+    }
+
+    //Check to make sure sure that a valid email address is submitted
+    if($_POST['contact_email'] === '')  { 
+            $hasError = true;
+    } else if (!preg_match("/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/i", $_POST['contact_email'])) {
+            $hasError = true;
+    } else {
+            $email = $_POST['contact_email'];
+    }
+
+    //Check to make sure comments were entered	
+    if($_POST['contact_textarea'] === '') {
+            $hasError = true;
+    } else {
+            if(function_exists('stripslashes')) {
+                    $comments = stripslashes($_POST['contact_textarea']);
+            } else {
+                    $comments = $_POST['contact_textarea'];
+            }
+    }
+
+    //If there is no error, send the email
+    if(!isset($hasError)) {
+
+            $emailTo = $yourEmail ;
+            $subject = $mail_subject;
+            $body = "Name: $name \n\nEmail: $email \n\nComments: $comments";
+            $headers = 'From : my site <'.$emailTo.'>' . "\r\n" . 'answer to : ' . $email;
+
+            mail($emailTo, $subject, $body, $headers);
+
+            $emailSent = true; 
+    }
+    
+}
+/*
+ * Newsletter
+ */
+if(isset($_POST['subscribe_submitted'])) { 
+    //Check to make sure sure that a valid email address is submitted
+    if($_POST['subscriber_email'] === '')  { 
+            $subscribe_hasError = true;
+    } else if (!preg_match("/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/i", $_POST['subscriber_email'])) {
+            $subscribe_hasError = true;
+    } else {
+            $subscriber_email = $_POST['subscriber_email'];
+    }
+    //If there is no error, write into newsletter_subscribers.txt
+    if(!isset($subscribe_hasError)) {
+            $newsletter_subscribers = fopen('newsletter_subscribers.txt', 'a');
+
+            fputs($newsletter_subscribers, $subscriber_email."\n");
+
+            fclose($newsletter_subscribers);
+            
+
+            $emailWritten = true; 
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +86,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        
         <!-- Stylesheet -->
         <link rel="stylesheet" href="styles/bootstrap.css" media="screen"  />
         <link rel="stylesheet" href="styles/bootstrap-responsive.css" media="screen"  />
@@ -15,7 +95,7 @@
 	<!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-        <!--[if lt IE 9]>
+        <!--[if lt IE 9]> 
             <style type="text/css">
                 /* Opacity bug */
                 .timer_box, #contact_area{
@@ -23,8 +103,37 @@
                 }
             </style>
         <![endif]-->
+        
     </head>
     <body>
+        <?php if(isset($emailSent) && $emailSent == true) { ?>
+                <div class="alert-success alert" >
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <strong><?php echo'Thanks, '. $name  .'.';?></strong>
+                        <p><?php echo'Your message was sent successfully. You will receive a response shortly.'; ?></p>
+                </div><!-- .alert -->
+	<?php } ?>
+        <?php if(isset($hasError) && $hasError == true) { ?>
+                <div class="alert-error alert">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    <strong><?php echo'Sorry,'; ?></strong>
+                        <p><?php echo'Your message can\'t be send...check if your email is correct otherwise a field is missing...'; ?></p>
+                </div><!-- .alert -->
+	<?php } ?>
+        <?php if(isset($emailWritten) && $emailWritten == true) { ?>
+            <div class="alert-success alert">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <strong><?php echo'Thanks you';?></strong>
+                    <p><?php echo'Your e-mail was sent successfully.'; ?></p>
+            </div><!-- .alert -->
+	<?php } ?>
+        <?php if(isset($subscribe_hasError) && $subscribe_hasError == true) { ?>
+            <div class="alert-error alert">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <strong><?php echo'Sorry,'; ?></strong>
+                    <p><?php echo'Your email can\'t be send...check if your email is correct.'; ?></p>
+            </div><!-- .alert -->
+	<?php } ?>
 	<div id="light"></div>
         <div id="page" class="container">
             <header class="center">
@@ -32,14 +141,14 @@
                 <h1>Our website is coming soon...</h1>
             </header>
             <div class="separation"></div>
-
+            
             <section id="timer" class="center">
                 <p id="message"></p>
                 <div id="days" class="timer_box"></div>
                 <div id="hours" class="timer_box"></div>
                 <div id="minutes" class="timer_box"></div>
                 <div id="seconds" class="timer_box"></div>
-
+                
                 <div class="row">
                     <div class="span12 center" id="button_open_progress">
                         <div class="button_bg">
@@ -63,7 +172,7 @@
                 </div><!-- end .row -->
             </section><!-- end #timer -->
             <div class="separation"></div>
-
+            
             <section id="container" class="es-carousel-wrapper">
                 <div class="es-carousel">
                     <ul>
@@ -89,7 +198,7 @@
                             <div class="slide">
                                 <div class="icon_container icon_3"><img src="images/3.png" alt=""></div>
                                 <h2>Perfect</h2>
-                                    <p>Here you're in a container box ! you see a slider but nothing prevents you to add delate it and add 6 columns, a table, a picture, a video...
+                                    <p>Here you're in a container box ! you see a slider but nothing prevents you to add delate it and add 6 columns, a table, a picture, a video... 
                                     Above you see a header area, put a headline to receive your future customers, then import your logo.
                                 </p>
                             </div><!-- end .slide -->
@@ -124,7 +233,7 @@
                 </div><!-- end .es-carousel-wrapper -->
             </section><!-- end #container -->
             <div class="separation"></div>
-
+            
             <section id="additional">
                 <div class="let_get_closer">
                     <img src="images/let_get_closer.png" title="Let's get closer">
@@ -133,8 +242,11 @@
                     <div class="span6 center">
                         <h2>Get ready</h2>
                         <div class="button_bg">
-                                <input  id="appendedInputButtons" class="span2 subscribe_input" size="24" type="text" placeholder="Your email goes here">
-                                <button class="btn btn-large subscribe_button" type="button">Subscribe <i class="icon_grey icon-check"></i></button>
+                            <form method="post" id="form_subscribe" action="index.php">
+                                <input  id="appendedInputButtons" name="subscriber_email" class="span2 subscribe_input" size="24" type="text" placeholder="Your email goes here">
+                                <input type="hidden" name="subscribe_submitted" id="subscribe_submitted" value="true" />
+                                <button class="btn btn-large subscribe_button" type="submit" name="subscribe_submitted">Subscribe <i class="icon_grey icon-check"></i></button>
+                            </form>
                         </div><!-- end .button_bg -->
                     </div><!-- end .span6 -->
                     <div class="span6 center">
@@ -183,25 +295,26 @@
                         <h2>Contact us</h2>
                         <div class="row">
                             <div class="span6">
-                                <form class="form-horizontal pull-left" method="post" action="index.html">
+                                <form class="form-horizontal pull-left" method="post" id="form" action="index.php">
                                     <fieldset>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_name">Name</label>
-                                            <div class="controls"><input type="text" id="contact_name" class="input-xlarge" ></div>
+                                            <div class="controls"><input type="text" name="contact_name" class="input-xlarge" ></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_email">E-mail</label>
-                                            <div class="controls"><input type="text" class="input-xlarge" id="contact_email"></div>
+                                            <div class="controls"><input type="text" class="input-xlarge" name="contact_email"></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_subject">Subject</label>
-                                            <div class="controls"><input type="text" id="contact_subject" class="input-xlarge"></div>
+                                            <div class="controls"><input type="text" name="contact_subject" class="input-xlarge"></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_textarea">Message</label>
-                                            <div class="controls"><textarea id="contact_textarea" rows="6"></textarea></div>
+                                            <div class="controls"><textarea name="contact_textarea" rows="6"></textarea></div>
                                         </div>
-                                        <div class="controls submit_button_bg pull-right"><button type="submit" class="btn" id="submitted">Send <i class="icon_grey icon-upload"></i></button></div>
+                                        <input type="hidden" name="submitted" id="submitted" value="true" />
+                                        <div class="controls submit_button_bg pull-right"><button type="submit" class="btn" name="submitted">Send <i class="icon_grey icon-upload"></i></button></div>
                                     </fieldset>
                                 </form>
                             </div><!-- end .span6 -->
@@ -213,7 +326,7 @@
                 </div><!-- end .row -->
             </section><!-- end #additional -->
             <div class="separation"></div>
-
+            
             <footer class="center">
                 <p><strong>J-day</strong> &#169; 2012 All rights reserved | Designed by <a href="http://www.2f-design.fr">F&#178; </a>   <a href="#" class="scroll_top_a" rel="tooltip" title="Go to the top !"><i class=" icon-arrow-up icon-white"></i></a></p>
                 <!-- Javascript files -->
@@ -222,6 +335,7 @@
                 <script type="text/javascript" src="js/main.js" ></script>
                 <script type="text/javascript" src="js/jquery.elastislide.js" ></script>
                 <script type="text/javascript" src="js/bootstrap-tooltip.js" ></script>
+                <script type="text/javascript" src="js/bootstrap-alert.js" ></script>
             </footer><!-- end #footer -->
         </div><!-- end #page -->
     </body>
