@@ -1,26 +1,26 @@
 <?php
 //set your email here:
-$yourEmail = 'your@email.fr';
+$yourEmail = 'abrahamoshel@gmail.com';
 /*
  * CONTACT FORM
  */
 //If the form is submitted
-if(isset($_POST['submitted'])) { 
+if(isset($_POST['submitted'])) {
     //Check to make sure that the name field is not empty
-    if($_POST['contact_name'] === '') { 
+    if($_POST['contact_name'] === '') {
             $hasError = true;
     } else {
             $name = $_POST['contact_name'];
     }
     //Check to make sure that the subject field is not empty
-    if($_POST['contact_subject'] === '') { 
+    if($_POST['contact_subject'] === '') {
             $hasError = true;
     } else {
             $mail_subject = $_POST['contact_subject'];
     }
 
     //Check to make sure sure that a valid email address is submitted
-    if($_POST['contact_email'] === '')  { 
+    if($_POST['contact_email'] === '')  {
             $hasError = true;
     } else if (!preg_match("/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/i", $_POST['contact_email'])) {
             $hasError = true;
@@ -28,7 +28,7 @@ if(isset($_POST['submitted'])) {
             $email = $_POST['contact_email'];
     }
 
-    //Check to make sure comments were entered	
+    //Check to make sure comments were entered
     if($_POST['contact_textarea'] === '') {
             $hasError = true;
     } else {
@@ -49,16 +49,16 @@ if(isset($_POST['submitted'])) {
 
             mail($emailTo, $subject, $body, $headers);
 
-            $emailSent = true; 
+            $emailSent = true;
     }
-    
+
 }
 /*
  * Newsletter
  */
-if(isset($_POST['subscribe_submitted'])) { 
+if(isset($_POST['subscribe_submitted'])) {
     //Check to make sure sure that a valid email address is submitted
-    if($_POST['subscriber_email'] === '')  { 
+    if($_POST['subscriber_email'] === '')  {
             $subscribe_hasError = true;
     } else if (!preg_match("/^[a-z0-9]+([_\\.-][a-z0-9]+)*@([a-z0-9]+([\.-][a-z0-9]+)*)+\\.[a-z]{2,}$/i", $_POST['subscriber_email'])) {
             $subscribe_hasError = true;
@@ -72,9 +72,9 @@ if(isset($_POST['subscribe_submitted'])) {
             fputs($newsletter_subscribers, $subscriber_email."\n");
 
             fclose($newsletter_subscribers);
-            
 
-            $emailWritten = true; 
+
+            $emailWritten = true;
     }
 }
 ?>
@@ -86,7 +86,7 @@ if(isset($_POST['subscribe_submitted'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        
+
         <!-- Stylesheet -->
         <link rel="stylesheet" href="styles/bootstrap.css" media="screen"  />
         <link rel="stylesheet" href="styles/bootstrap-responsive.css" media="screen"  />
@@ -95,7 +95,7 @@ if(isset($_POST['subscribe_submitted'])) {
 	<!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-        <!--[if lt IE 9]> 
+        <!--[if lt IE 9]>
             <style type="text/css">
                 /* Opacity bug */
                 .timer_box, #contact_area{
@@ -103,7 +103,7 @@ if(isset($_POST['subscribe_submitted'])) {
                 }
             </style>
         <![endif]-->
-        
+
     </head>
     <body>
         <?php if(isset($emailSent) && $emailSent == true) { ?>
@@ -141,14 +141,14 @@ if(isset($_POST['subscribe_submitted'])) {
                 <h1>Our website is coming soon...</h1>
             </header>
             <div class="separation"></div>
-            
+
             <section id="timer" class="center">
                 <p id="message"></p>
                 <div id="days" class="timer_box"></div>
                 <div id="hours" class="timer_box"></div>
                 <div id="minutes" class="timer_box"></div>
                 <div id="seconds" class="timer_box"></div>
-                
+
                 <div class="row">
                     <div class="span12 center" id="button_open_progress">
                         <div class="button_bg">
@@ -172,7 +172,7 @@ if(isset($_POST['subscribe_submitted'])) {
                 </div><!-- end .row -->
             </section><!-- end #timer -->
             <div class="separation"></div>
-            
+
             <section id="container" class="es-carousel-wrapper">
                 <div class="es-carousel">
                     <ul>
@@ -198,7 +198,7 @@ if(isset($_POST['subscribe_submitted'])) {
                             <div class="slide">
                                 <div class="icon_container icon_3"><img src="images/3.png" alt=""></div>
                                 <h2>Perfect</h2>
-                                    <p>Here you're in a container box ! you see a slider but nothing prevents you to add delate it and add 6 columns, a table, a picture, a video... 
+                                    <p>Here you're in a container box ! you see a slider but nothing prevents you to add delate it and add 6 columns, a table, a picture, a video...
                                     Above you see a header area, put a headline to receive your future customers, then import your logo.
                                 </p>
                             </div><!-- end .slide -->
@@ -233,7 +233,7 @@ if(isset($_POST['subscribe_submitted'])) {
                 </div><!-- end .es-carousel-wrapper -->
             </section><!-- end #container -->
             <div class="separation"></div>
-            
+
             <section id="additional">
                 <div class="let_get_closer">
                     <img src="images/let_get_closer.png" title="Let's get closer">
@@ -326,7 +326,7 @@ if(isset($_POST['subscribe_submitted'])) {
                 </div><!-- end .row -->
             </section><!-- end #additional -->
             <div class="separation"></div>
-            
+
             <footer class="center">
                 <p><strong>J-day</strong> &#169; 2012 All rights reserved | Designed by <a href="http://www.2f-design.fr">F&#178; </a>   <a href="#" class="scroll_top_a" rel="tooltip" title="Go to the top !"><i class=" icon-arrow-up icon-white"></i></a></p>
                 <!-- Javascript files -->
