@@ -14,7 +14,7 @@ jQuery.noConflict()(function($){
     * Set your date here  (YEAR, MONTH (0 for January/11 for December), DAY, HOUR, MINUTE, SECOND)
     * according to the GMT+0 Timezone
     **/
-    var launch = new Date(2012, 10, 25, 11, 00);
+    var launch = new Date(2012, 09, 25, 11, 00);
     /**
     * The script
     **/
@@ -32,7 +32,7 @@ jQuery.noConflict()(function($){
             hours.html('<strong>0</strong><p>Hour</p>');
             minutes.html('<strong>0</strong><p>Minute</p>');
             seconds.html('<strong>0</strong><p>Second</p>');
-            message.html('We are truly sorry for our delay, but our website is coming...');
+            message.html('I am truly sorry for my delay, but my website is coming...');
         }
         else{
             var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
@@ -51,7 +51,7 @@ jQuery.noConflict()(function($){
             seconds.html('<strong>'+s+'</strong><p>Second'+(s>1?'s':''),'</p>');
             setTimeout(setDate, 1000);
 
-            message.html('Welcome ! Unfortunately, we’re not ready now. But, the launch day is coming !');
+            message.html("Welcome ! Unfortunately, I'm not ready now. But, the launch day is coming !");
         }
     }
 	});
