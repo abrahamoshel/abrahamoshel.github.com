@@ -81,7 +81,7 @@ if(isset($_POST['subscribe_submitted'])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Abraham Oshel - Chicago Ruby Developer</title>
+        <title>Abraham Oshel | Chicago Ruby Developer</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
