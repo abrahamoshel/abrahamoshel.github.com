@@ -272,7 +272,7 @@ if(isset($_POST['subscribe_submitted'])) {
                         <h2>Contact us</h2>
                         <div class="row">
                             <div class="span6">
-                                <form class="form-horizontal pull-left" method="post" action="index.html">
+                                <form class="form-horizontal pull-left" method="post" action="index.php">
                                     <fieldset>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_name">Name</label>
