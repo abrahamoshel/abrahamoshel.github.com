@@ -81,7 +81,7 @@ if(isset($_POST['subscribe_submitted'])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Your Compagny - Coming soon</title>
+        <title>Abraham Oshel - Chicago Ruby Developer</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -103,42 +103,13 @@ if(isset($_POST['subscribe_submitted'])) {
                 }
             </style>
         <![endif]-->
-
     </head>
     <body>
-        <?php if(isset($emailSent) && $emailSent == true) { ?>
-                <div class="alert-success alert" >
-                    <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <strong><?php echo'Thanks, '. $name  .'.';?></strong>
-                        <p><?php echo'Your message was sent successfully. You will receive a response shortly.'; ?></p>
-                </div><!-- .alert -->
-	<?php } ?>
-        <?php if(isset($hasError) && $hasError == true) { ?>
-                <div class="alert-error alert">
-                    <a class="close" data-dismiss="alert" href="#">&times;</a>
-                    <strong><?php echo'Sorry,'; ?></strong>
-                        <p><?php echo'Your message can\'t be send...check if your email is correct otherwise a field is missing...'; ?></p>
-                </div><!-- .alert -->
-	<?php } ?>
-        <?php if(isset($emailWritten) && $emailWritten == true) { ?>
-            <div class="alert-success alert">
-                <a class="close" data-dismiss="alert" href="#">&times;</a>
-                <strong><?php echo'Thanks you';?></strong>
-                    <p><?php echo'Your e-mail was sent successfully.'; ?></p>
-            </div><!-- .alert -->
-	<?php } ?>
-        <?php if(isset($subscribe_hasError) && $subscribe_hasError == true) { ?>
-            <div class="alert-error alert">
-                <a class="close" data-dismiss="alert" href="#">&times;</a>
-                <strong><?php echo'Sorry,'; ?></strong>
-                    <p><?php echo'Your email can\'t be send...check if your email is correct.'; ?></p>
-            </div><!-- .alert -->
-	<?php } ?>
 	<div id="light"></div>
         <div id="page" class="container">
             <header class="center">
-                <a href="#"><img src="images/logo.png" class="logo" title="Your logo"></a>
-                <h1>Our website is coming soon...</h1>
+              <h2><strike>:abraham_oshel => ["ruby", "developer"]</strike></h2>
+              <h1>abraham_oshel: %w[ruby developer]</h1>
             </header>
             <div class="separation"></div>
 
@@ -152,14 +123,14 @@ if(isset($_POST['subscribe_submitted'])) {
                 <div class="row">
                     <div class="span12 center" id="button_open_progress">
                         <div class="button_bg">
-                            <button class="btn btn-large show_progress_area">We progress ! <i class="icon_grey icon-time"></i></button>
+                            <button class="btn btn-large show_progress_area">Progress Check ! <i class="icon_grey icon-time"></i></button>
                         </div><!-- end .button_bg -->
                         <div class="open_me" id="open_me_progress">
                             <img src="images/open_me.png" title="Open me">
                         </div><!-- end .open_me -->
                     </div><!-- end .span12 -->
                     <div class="span12" id="progress_area">
-                        <h2>We are here</h2>
+                        <h2>I am here</h2>
                         <div id="progress_bar" class="button_bg">
                             <div class="progress progress-striped active span6 ">
                                 <a href="#" rel="tooltip" title="70%"><div class="bar" style="width: 70%;"></div></a>
@@ -178,22 +149,55 @@ if(isset($_POST['subscribe_submitted'])) {
                     <ul>
                         <li>
                             <div class="slide">
+                                <div class="icon_container icon_6"><img src="images/6.png" alt=""></div>
+                                <h2>About Me</h2>
+                                    <p>A native to Kansas, yet educated in Chicago and Glasgow Scotland. Since graduating college I have worked in the
+                                    technology field since. Theming websites, and building back-end web applications are my passion and speciality.
+                                </p>
+                            </div><!-- end .slide -->
+                        </li>
+                        <li>
+                            <div class="slide">
                                 <div class="icon_container icon_1"><img src="images/1.png" alt=""></div>
-                                <h2>Essential</h2>
-                                <p>Design, simple, elegant, customizable, 100% responsive. This template is for you! Choose between 15 amazing backgrounds, customize your google map with your logo,
-                                your social networks (28 available), import your logo, contact form...
+                                <h2>Ruby / RoR</h2>
+                                <p>As a Rubyist, I have experience in constructing and maintaining application using Sinatra and Ruby on Rails. To me
+                                writing code is a art-form and developing web applications is a craft. Currently I am a full time Ruby on Rails developer
+                                for a digital-to-print and fulfillment company in Chicago.
+                                </p>
+                            </div><!-- end .slide -->
+                        </li>
+                        <li>
+                            <div class="slide">
+                                <div class="icon_container icon_4"><img src="images/4.png" alt=""></div>
+                                <h2>Wordpress</h2>
+                                <p>Wordpress is an unbelievable CMS. I have build web site so informative that educators rally for
+                                change (<a href="#" title="blah" target="_blank">Environmental Change Institute UIC</a>), so slick designers showcase their work 
+                                (<a href="#" title="blah" target="_blank">Grillo Group</a>), and detailed and exact
+                                as an architect (<a href="#" title="blah" target="_blank">BauerLatoza Studio</a>).
+                                </p>
+                            </div><!-- end .slide -->
+                        </li>
+                        <li>
+                            <div class="slide">
+                                <div class="icon_container icon_5"><img src="images/5.png" alt=""></div>
+                                <h2>CSS</h2>
+                                <p>It is my pride is to make web sites available and looking good on any device, weather that is in your pocket or on
+                                your desk. There is nothing prettier than a fluid and responsive website. I've done my job when everything looks 
+                                great at any size.
                                 </p>
                             </div><!-- end .slide -->
                         </li>
                         <li>
                             <div class="slide">
                                 <div class="icon_container icon_2"><img src="images/2.png" alt=""></div>
-                                <h2>Easy</h2>
-                                <p>All the icons, backgrounds are included, for this slider you can choose between 20 icons liked by everyone, for every taste.
-                                   Then this page is divided in large parts, so if you want to delate a part it's very easy...(progress area, contact area, container...).
+                                <h2>HTML</h2>
+                                <p>Push the boundaries of HTML to HTML5 is a great adventure. I love using microformats so that a web application can
+                                be brought to the top of search engine results. Every detail is important with correctly marking up an address, recipe,
+                                or abbreviation on a website.
                                 </p>
                             </div><!-- end .slide -->
                         </li>
+                        <!-- 
                         <li>
                             <div class="slide">
                                 <div class="icon_container icon_3"><img src="images/3.png" alt=""></div>
@@ -201,34 +205,9 @@ if(isset($_POST['subscribe_submitted'])) {
                                     <p>Here you're in a container box ! you see a slider but nothing prevents you to add delate it and add 6 columns, a table, a picture, a video...
                                     Above you see a header area, put a headline to receive your future customers, then import your logo.
                                 </p>
-                            </div><!-- end .slide -->
+                            </div><!-- end .slide
                         </li>
-                        <li>
-                            <div class="slide">
-                                <div class="icon_container icon_4"><img src="images/4.png" alt=""></div>
-                                <h2>About us</h2>
-                                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum interdum eros eu lacus scelerisque eleifend pretium tellus malesuada.
-                                    Nulla sem metus, posuere sed fermentum ut, ultrices eu lacus
-                                </p>
-                            </div><!-- end .slide -->
-                        </li>
-                        <li>
-                            <div class="slide">
-                                <div class="icon_container icon_5"><img src="images/5.png" alt=""></div>
-                                <h2>We feel for everyone</h2>
-                                <p>Etiam cursus iaculis turpis, ac tristique turpis commodo et. Suspendisse dui dui, pellentesque sed bibendum ac, hendrerit ac risus.
-                                Maecenas consectetur egestas enim vel dapibus. Donec sed ante sed libero feugiat eleifend eget ut arcu.</p>
-                            </div><!-- end .slide -->
-                        </li>
-                        <li>
-                            <div class="slide">
-                                <div class="icon_container icon_6"><img src="images/6.png" alt=""></div>
-                                <h2>Let's get closer</h2>
-                                    <p>Integer quis libero tortor, quis faucibus sem. Ut vitae lacus orci. Nullam viverra lobortis commodo. Nam leo leo, varius ac condimentum et, ultricies sit amet sem.
-                                        Phasellus lobortis mauris nec tortor fringilla nec cursus lorem elementum.
-                                </p>
-                            </div><!-- end .slide -->
-                        </li>
+                        -->
                     </ul>
                 </div><!-- end .es-carousel-wrapper -->
             </section><!-- end #container -->
@@ -242,22 +221,21 @@ if(isset($_POST['subscribe_submitted'])) {
                     <div class="span6 center">
                         <h2>Get ready</h2>
                         <div class="button_bg">
-                            <form method="post" id="form_subscribe" action="index.php">
-                                <input  id="appendedInputButtons" name="subscriber_email" class="span2 subscribe_input" size="24" type="text" placeholder="Your email goes here">
-                                <input type="hidden" name="subscribe_submitted" id="subscribe_submitted" value="true" />
-                                <button class="btn btn-large subscribe_button" type="submit" name="subscribe_submitted">Subscribe <i class="icon_grey icon-check"></i></button>
-                            </form>
+                                <input  id="appendedInputButtons" class="span2 subscribe_input" size="24" type="text" placeholder="Your email goes here">
+                                <button class="btn btn-large subscribe_button" type="button">Subscribe <i class="icon_grey icon-check"></i></button>
                         </div><!-- end .button_bg -->
                     </div><!-- end .span6 -->
                     <div class="span6 center">
-                        <h2>We are social</h2>
-                            <a href="#" rel="tooltip" title="Join us on facebook"><img src="images/icon_set/facebook.png" alt="facebook icon"  height="30" width="30" class="a_social_icon  facebook"></a>
+                        <h2>I am  social</h2>
+                            <a href="https://github.com/abrahamoshel" target="_blank" rel="tooltip" title="Star your favorite Repo"><img src="images/icon_set/github.png" alt="github icon"  height="30" width="30" class="a_social_icon  github"></a>
+                            <a href="http://www.facebook.com/pages/Abraham/198707410195075" target="_blank" rel="tooltip" title="Join us on facebook"><img src="images/icon_set/facebook.png" alt="facebook icon"  height="30" width="30" class="a_social_icon  facebook"></a>
+                            <a href="http://www.linkedin.com/in/abrahamoshel" target="_blank" rel="tooltip" title="Follow us on linkedin"><img src="images/icon_set/linkedin.png" alt="linkedin icon"  height="30" width="30" class="a_social_icon linkedin"></a>
+                            <a href="https://plus.google.com/u/0/101770472139774939371/posts" target="_blank" rel="tooltip" title="Join us on google +"><img src="images/icon_set/gplus.png" alt="gplus icon"  height="30" width="30" class="a_social_icon gplus"></a>
+                            <!-- disabled// choose yours !
                             <a href="#" rel="tooltip" title="Follow us on twitter"><img src="images/icon_set/twitter.png" alt="twitter icon" height="30" width="30" class="a_social_icon twitter"></a>
-                            <a href="#" rel="tooltip" title="Join us on google +"><img src="images/icon_set/gplus.png" alt="gplus icon"  height="30" width="30" class="a_social_icon gplus"></a>
                             <a href="#" rel="tooltip" title="Join us on youtube"><img src="images/icon_set/youtube.png" alt="youtube icon"  height="30" width="30" class="a_social_icon youtube"></a>
                             <a href="#" rel="tooltip" title="Join us on vimeo"><img src="images/icon_set/vimeo.png" alt="vimeo icon"  height="30" width="30" class="a_social_icon vimeo"></a>
                             <a href="#" rel="tooltip" title="Subscribe our rss feed"><img src="images/icon_set/rss.png" alt="rss icon"  height="30" width="30" class="a_social_icon rss"></a>
-                            <!-- disabled// choose yours !
                             <a href="#" rel="tooltip" title=""><img src="images/icon_set/addthis.png" alt="addthis icon"  height="30" width="30" class="a_social_icon addthis"></a>
                             <a href="#" rel="tooltip" title="Follow us on behance"><img src="images/icon_set/behance.png" alt="behance icon"  height="30" width="30" class="a_social_icon behance"></a>
                             <a href="#" rel="tooltip" title="Join us on blogger"><img src="images/icon_set/blogger.png" alt="blogger icon"  height="30" width="30" class="a_social_icon blogger"></a>
@@ -267,7 +245,6 @@ if(isset($_POST['subscribe_submitted'])) {
                             <a href="#" rel="tooltip" title="Join us on instagram"><img src="images/icon_set/instagram.png" alt="instagram icon"  height="30" width="30" class="a_social_icon instagram"></a>
                             <a href="#" rel="tooltip" title="Join us on lastfm"><img src="images/icon_set/lastfm.png" alt="lastfm icon"  height="30" width="30" class="a_social_icon lastfm"></a>
                             <a href="#" rel="tooltip" title=""><img src="images/icon_set/like.png" alt="like icon"  height="30" width="30" class="a_social_icon like"></a>
-                            <a href="#" rel="tooltip" title="Follow us on linkedin"><img src="images/icon_set/linkedin.png" alt="linkedin icon"  height="30" width="30" class="a_social_icon linkedin"></a>
                             <a href="#" rel="tooltip" title="Join us on livejournal"><img src="images/icon_set/livejournal.png" alt="livejournal icon"  height="30" width="30" class="a_social_icon livejournal"></a>
                             <a href="#" rel="tooltip" title="Join us on myspace"><img src="images/icon_set/myspace.png" alt="myspace icon"  height="30" width="30" class="a_social_icon myspace"></a>
                             <a href="#" rel="tooltip" title="Join us on paypal"><img src="images/icon_set/paypal.png" alt="paypal icon"  height="30" width="30" class="a_social_icon paypal"></a>
@@ -285,7 +262,7 @@ if(isset($_POST['subscribe_submitted'])) {
                 <div class="row">
                     <div class="span12 center" id="button_open_contact">
                         <div class="button_bg">
-                            <button class="btn btn-large show_contact_area">Contact us now ! <i class="icon_grey icon-envelope"></i></button>
+                            <button class="btn btn-large show_contact_area">Contact me now ! <i class="icon_grey icon-envelope"></i></button>
                         </div><!-- end .button_bg -->
                         <div class="open_me" id="open_me_contact">
                             <img src="images/open_me.png" title="Open me">
@@ -295,26 +272,25 @@ if(isset($_POST['subscribe_submitted'])) {
                         <h2>Contact us</h2>
                         <div class="row">
                             <div class="span6">
-                                <form class="form-horizontal pull-left" method="post" id="form" action="index.php">
+                                <form class="form-horizontal pull-left" method="post" action="index.html">
                                     <fieldset>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_name">Name</label>
-                                            <div class="controls"><input type="text" name="contact_name" class="input-xlarge" ></div>
+                                            <div class="controls"><input type="text" id="contact_name" class="input-xlarge" ></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_email">E-mail</label>
-                                            <div class="controls"><input type="text" class="input-xlarge" name="contact_email"></div>
+                                            <div class="controls"><input type="text" class="input-xlarge" id="contact_email"></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_subject">Subject</label>
-                                            <div class="controls"><input type="text" name="contact_subject" class="input-xlarge"></div>
+                                            <div class="controls"><input type="text" id="contact_subject" class="input-xlarge"></div>
                                         </div>
                                         <div class="control-group">
                                             <label class="control-label" for="contact_textarea">Message</label>
-                                            <div class="controls"><textarea name="contact_textarea" rows="6"></textarea></div>
+                                            <div class="controls"><textarea id="contact_textarea" rows="6"></textarea></div>
                                         </div>
-                                        <input type="hidden" name="submitted" id="submitted" value="true" />
-                                        <div class="controls submit_button_bg pull-right"><button type="submit" class="btn" name="submitted">Send <i class="icon_grey icon-upload"></i></button></div>
+                                        <div class="controls submit_button_bg pull-right"><button type="submit" class="btn" id="submitted">Send <i class="icon_grey icon-upload"></i></button></div>
                                     </fieldset>
                                 </form>
                             </div><!-- end .span6 -->
@@ -328,14 +304,13 @@ if(isset($_POST['subscribe_submitted'])) {
             <div class="separation"></div>
 
             <footer class="center">
-                <p><strong>J-day</strong> &#169; 2012 All rights reserved | Designed by <a href="http://www.2f-design.fr">F&#178; </a>   <a href="#" class="scroll_top_a" rel="tooltip" title="Go to the top !"><i class=" icon-arrow-up icon-white"></i></a></p>
+                <p><strong>Abraham Oshel</strong> &#169; 2012 All rights reserved &nbsp;&nbsp;|  <a href="#" class="scroll_top_a" rel="tooltip" title="Go to the top !"><i class=" icon-arrow-up icon-white"></i></a></p>
                 <!-- Javascript files -->
                 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" ></script>
                 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
                 <script type="text/javascript" src="js/main.js" ></script>
                 <script type="text/javascript" src="js/jquery.elastislide.js" ></script>
                 <script type="text/javascript" src="js/bootstrap-tooltip.js" ></script>
-                <script type="text/javascript" src="js/bootstrap-alert.js" ></script>
             </footer><!-- end #footer -->
         </div><!-- end #page -->
     </body>
