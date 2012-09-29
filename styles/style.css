@@ -85,6 +85,9 @@ a, a:hover{
 header{
     margin: 96px 0 24px 0;
 }
+header h2{
+	padding-bottom: .5em;
+}
 .logo{
     margin-bottom: 56px;
 }
