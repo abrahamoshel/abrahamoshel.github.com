@@ -2,7 +2,7 @@
  * J-Day -- HTML prenium template
  *
  * Copyright (c) 2012 F²
- * 
+ *
  * Main stylesheet
  *
  * Style -> Dark
@@ -11,9 +11,12 @@
 /*Main
 /********************************/
 body{
-    color: #F8F8F8;
+/*    color: #F8F8F8;
     background: url('../images/patterns_dark/pattern_default.png') repeat;
-    text-shadow: 0 -2px 0 #000;
+*/
+    color: #222;
+    background: #FFF;
+    /*text-shadow: 0 -2px 0 #000;*/
 }
 #page{
 	z-index: 2;
@@ -29,21 +32,29 @@ body{
     font-weight: normal;
     font-style: normal;
 }
+div.row-fluid{
+  padding: 2% 0%;
+  border-bottom: 1px solid #3399FF;
+}
+div.row-fluid.technical ul{
+  list-style: none;
+  margin-left: 0px;
+}
 h1{
-    color: #CCCCCC;
-    text-shadow: 0px 2px 0px #000;
-    font-size: 96px;
+    /*color: #CCCCCC;*/
+    /*text-shadow: 0px 2px 0px #000;*/
+    font-size: 48px;
     font-family: 'LeagueGothicRegular',arial, sans-serif;
     font-weight: 500;
     padding: 24px 0px;
 }
 h2{
-    color: #CCCCCC;
-    text-shadow: 0px 2px 0px #000;
+    /*color: #CCCCCC;*/
+    /*text-shadow: 0px 2px 0px #000;*/
     font-family: 'LeagueGothicRegular',arial, sans-serif;
     font-weight: 500;
-    text-align: center;
-    font-size: 36px;
+    /*text-align: center;*/
+    font-size: 24px;
 }
 a, a:hover{
     color: #CCCCCC;
@@ -68,7 +79,7 @@ a, a:hover{
     top: 40px;
 }
 .alert{
-    position: relative; 
+    position: relative;
     z-index: 10
 }
 /********************************/
@@ -312,7 +323,7 @@ a img.a_social_icon:hover {
     margin-left: 30px;
     padding: 12px 0 0 0;
 }
-#button_open_contact{ 
+#button_open_contact{
     margin: 48px 0 24px 30px;
     position: relative;
 }
