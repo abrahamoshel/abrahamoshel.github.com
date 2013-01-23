@@ -427,7 +427,7 @@ a:hover.scroll_top_a i{
   div.row-fluid .stamp, div.stamp_wrapper{
     padding: 0em;
     margin: 1em 0em;
-    border: 2px dashed #fff;
+    border: .1em dashed #fff;
   }
   div.stamp_wrapper .span3:first-child{
     border-top: none;
