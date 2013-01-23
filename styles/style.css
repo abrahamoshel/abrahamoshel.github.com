@@ -413,3 +413,44 @@ a:hover.scroll_top_a i{
     -ms-transition-duration: 1s;
     transition-duration: 1s;
 }
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  body{
+    background: #422A05;
+    color: #424242;
+  }
+  div.row-fluid{
+    border: none;
+    padding: 0em;
+  }
+  div.row-fluid .stamp, div.stamp_wrapper{
+    padding: 0em;
+    margin: 1em 0em;
+    border: 2px dashed #fff;
+  }
+  div.stamp_wrapper .span3:first-child{
+    border-top: none;
+  }
+  div.stamp_wrapper > .row-fluid:first-child .span3{
+    border-top: .7em solid #fff;
+  }
+  .stamp_wrapper div.row-fluid{
+    padding: 0em;
+  }
+  .span3, .span2, .span7{
+    border-left: .7em solid #fff;
+    border-right: .7em solid #fff;
+    background: #BCBCBC;
+  }
+  .span3:first-child{
+    border-top: .7em solid #fff;
+  }
+  .span3:last-child, .row-fluid:last-child .span7{
+    border-bottom: .7em solid #fff;
+  }
+  .span3 ul, .span3 h4 + p, .span2 h4 > p, .stamp_wrapper .span7 ul{
+    margin: 0em;
+    padding-bottom: 1em;
+  }
+}
