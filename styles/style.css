@@ -18,6 +18,9 @@ body{
     background: #FFF;
     /*text-shadow: 0 -2px 0 #000;*/
 }
+ul{
+  list-style-position: inside;
+}
 #page{
 	z-index: 2;
 	position: relative;
@@ -416,18 +419,21 @@ a:hover.scroll_top_a i{
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-  body{
-    background: #422A05;
-    color: #424242;
-  }
   div.row-fluid{
     border: none;
     padding: 0em;
+  }
+  .row-fluid div[class^='span']{
+    padding: 0em 1em;
   }
   div.row-fluid .stamp, div.stamp_wrapper{
     padding: 0em;
     margin: 1em 0em;
     border: .1em dashed #fff;
+    -webkit-box-shadow:  1px 1px 6px 3px #ccc;
+    -moz-box-shadow:  1px 1px 6px 3px #ccc;
+    box-shadow:  1px 1px 6px 3px #ccc;
+    background: #D0D0D0;
   }
   div.stamp_wrapper .span3:first-child{
     border-top: none;
@@ -441,7 +447,9 @@ a:hover.scroll_top_a i{
   .span3, .span2, .span7{
     border-left: .7em solid #fff;
     border-right: .7em solid #fff;
-    background: #BCBCBC;
+  }
+  .objective, .contact_info{
+    border: none;
   }
   .span3:first-child{
     border-top: .7em solid #fff;
