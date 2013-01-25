@@ -37,7 +37,13 @@ ul{
 }
 div.row-fluid{
   padding: 2% 0%;
-  border-bottom: 1px solid #3399FF;
+  border-bottom: 1px solid #00A0D1;
+}
+.accent{
+  color: #00A0D1;
+}
+span.secondary_accent{
+  color: #FFB300;
 }
 div.row-fluid.technical ul{
   list-style: none;
